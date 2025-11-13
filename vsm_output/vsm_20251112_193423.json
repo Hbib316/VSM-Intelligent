@@ -1,0 +1,126 @@
+{
+  "process": "Assemblage Complet Automobile",
+  "summary": {
+    "process": "Assemblage Complet Automobile",
+    "lead_time": 36.18,
+    "va_ratio": 41.5,
+    "takt_time": null,
+    "total_cycle_time": 16.0,
+    "total_wait_time": 20.18,
+    "total_value_added": 15.0,
+    "non_value_added": 21.18
+  },
+  "timeline": [
+    {
+      "name": "Réception Pièces & Stock",
+      "start": 0.0,
+      "end": 4.5,
+      "wait": 4.0,
+      "cycle": 0.5,
+      "value_added": false,
+      "predicted_wait": false
+    },
+    {
+      "name": "Inspection Qualité Entrée",
+      "start": 4.5,
+      "end": 6.5,
+      "wait": 1.0,
+      "cycle": 1.0,
+      "value_added": true,
+      "predicted_wait": false
+    },
+    {
+      "name": "Soudure Châssis",
+      "start": 6.5,
+      "end": 10.5,
+      "wait": 1.0,
+      "cycle": 3.0,
+      "value_added": true,
+      "predicted_wait": false
+    },
+    {
+      "name": "Attente Peinture",
+      "start": 10.5,
+      "end": 12.5,
+      "wait": 2.0,
+      "cycle": 0.0,
+      "value_added": false,
+      "predicted_wait": false
+    },
+    {
+      "name": "Peinture & Séchage",
+      "start": 12.5,
+      "end": 16.5,
+      "wait": 1.5,
+      "cycle": 2.5,
+      "value_added": true,
+      "predicted_wait": false
+    },
+    {
+      "name": "Assemblage Moteur",
+      "start": 16.5,
+      "end": 23.38,
+      "wait": 2.88,
+      "cycle": 4.0,
+      "value_added": true,
+      "predicted_wait": false
+    },
+    {
+      "name": "Montage Intérieur",
+      "start": 23.38,
+      "end": 26.88,
+      "wait": 1.5,
+      "cycle": 2.0,
+      "value_added": true,
+      "predicted_wait": false
+    },
+    {
+      "name": "Électronique & Câblage",
+      "start": 26.88,
+      "end": 29.18,
+      "wait": 0.8,
+      "cycle": 1.5,
+      "value_added": true,
+      "predicted_wait": false
+    },
+    {
+      "name": "Test Qualité Final",
+      "start": 29.18,
+      "end": 30.68,
+      "wait": 0.5,
+      "cycle": 1.0,
+      "value_added": true,
+      "predicted_wait": false
+    },
+    {
+      "name": "Stockage Final",
+      "start": 30.68,
+      "end": 33.88,
+      "wait": 3.0,
+      "cycle": 0.2,
+      "value_added": false,
+      "predicted_wait": false
+    },
+    {
+      "name": "Livraison Concessionnaire",
+      "start": 33.88,
+      "end": 36.18,
+      "wait": 2.0,
+      "cycle": 0.3,
+      "value_added": false,
+      "predicted_wait": false
+    }
+  ],
+  "alerts": [
+    "Rule alert: étape critique -> Réception Pièces & Stock (wait=4.0, cycle=0.5)",
+    "Rule alert: étape critique -> Attente Peinture (wait=2.0, cycle=0.1)",
+    "Rule alert: étape critique -> Stockage Final (wait=3.0, cycle=0.2)",
+    "Rule alert: étape critique -> Livraison Concessionnaire (wait=2.0, cycle=0.3)",
+    "ML alert: Réception Pièces & Stock (predicted_wait=4, cycle=0.5)",
+    "ML alert: Attente Peinture (predicted_wait=2, cycle=0)",
+    "ML alert: Stockage Final (predicted_wait=3, cycle=0.2)",
+    "ML alert: Livraison Concessionnaire (predicted_wait=2, cycle=0.3)"
+  ],
+  "ai_report": "Rapport VSM - Assemblage Complet Automobile\nLead time: 36.18 h\nVA ratio: 41.5%\n\nAlertes détectées:\n- Rule alert: étape critique -> Réception Pièces & Stock (wait=4.0, cycle=0.5)\n- Rule alert: étape critique -> Attente Peinture (wait=2.0, cycle=0.1)\n- Rule alert: étape critique -> Stockage Final (wait=3.0, cycle=0.2)\n- Rule alert: étape critique -> Livraison Concessionnaire (wait=2.0, cycle=0.3)\n- ML alert: Réception Pièces & Stock (predicted_wait=4, cycle=0.5)\n- ML alert: Attente Peinture (predicted_wait=2, cycle=0)\n- ML alert: Stockage Final (predicted_wait=3, cycle=0.2)\n- ML alert: Livraison Concessionnaire (predicted_wait=2, cycle=0.3)\n\nRecommandations (local):\n1) Prioriser la réduction des temps d'attente sur les étapes critiques.\n2) Rééquilibrer les opérations si une machine/opération est trop lente.\n3) Introduire Kanban digital pour limiter le WIP.\nAction immédiate: programmer un audit de la première étape critique identifiée.",
+  "analysis_timestamp": "2025-11-12T18:34:23.428388Z"
+}

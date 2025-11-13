@@ -1,0 +1,84 @@
+{
+  "process": "Processus dynamique",
+  "summary": {
+    "process": "Processus dynamique",
+    "lead_time": 1.0,
+    "va_ratio": 0.0,
+    "total_cycle_time": 3.0,
+    "total_wait_time": 0.0,
+    "nb_steps": 3
+  },
+  "timeline": [
+    {
+      "name": "Step 1",
+      "start": 0.0,
+      "end": 1.0,
+      "wait": 0.0,
+      "cycle": 1.0,
+      "value_added": false,
+      "predicted_wait": 2.73,
+      "predicted_flag": true
+    },
+    {
+      "name": "Step 2",
+      "start": 0.0,
+      "end": 1.0,
+      "wait": 0.0,
+      "cycle": 1.0,
+      "value_added": false,
+      "predicted_wait": 2.73,
+      "predicted_flag": true
+    },
+    {
+      "name": "Step 3",
+      "start": 0.0,
+      "end": 1.0,
+      "wait": 0.0,
+      "cycle": 1.0,
+      "value_added": false,
+      "predicted_wait": 2.73,
+      "predicted_flag": true
+    }
+  ],
+  "alerts": [],
+  "ai_report": "Rapport VSM - Processus dynamique\nLead time planifié: 1.0 h\nVA ratio: 0.0 %\n\nAlertes détectées:\n- ML alert: Step 1 predicted wait 2.73h > scheduled start 0.0h\n- ML alert: Step 2 predicted wait 2.73h > scheduled start 0.0h\n- ML alert: Step 3 predicted wait 2.73h > scheduled start 0.0h\n- ML critical: Step 1 (pred_wait=2.73, cycle=1.0)\n- ML critical: Step 2 (pred_wait=2.73, cycle=1.0)\n- ML critical: Step 3 (pred_wait=2.73, cycle=1.0)\n\nRecommandations:\n1) Vérifier les étapes marqué(es) ML alert / ML critical.\n2) Rééquilibrer la charge entre opérations en amont.\n3) Réduire stocks buffers identifiés.",
+  "analysis_timestamp": "2025-11-13T19:50:12.043442Z",
+  "steps": [
+    {
+      "name": "Step 1",
+      "cycle_time": 1.0,
+      "cost": 100.0,
+      "value_added": false,
+      "depends_on": [],
+      "wait_time": 0.0,
+      "start_time": 0.0,
+      "end_time": 1.0,
+      "_predicted_wait": true,
+      "predicted_wait": 2.73
+    },
+    {
+      "name": "Step 2",
+      "cycle_time": 1.0,
+      "cost": 100.0,
+      "value_added": false,
+      "depends_on": [],
+      "wait_time": 0.0,
+      "start_time": 0.0,
+      "end_time": 1.0,
+      "_predicted_wait": true,
+      "predicted_wait": 2.73
+    },
+    {
+      "name": "Step 3",
+      "cycle_time": 1.0,
+      "cost": 100.0,
+      "value_added": false,
+      "depends_on": [],
+      "wait_time": 0.0,
+      "start_time": 0.0,
+      "end_time": 1.0,
+      "_predicted_wait": true,
+      "predicted_wait": 2.73
+    }
+  ]
+}

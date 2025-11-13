@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>VSM Intelligent - Industrie Automobile 4.0</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>VSM Intelligent - Plateforme d'Optimisation Lean Manufacturing</h1>
+      <p>Analyse Value Stream Mapping — créez vos étapes, définissez dépendances, analysez avec ML local</p>
+    </div>
+
+    <div class="main-grid">
+      <!-- Left: VSM Builder -->
+      <div class="card">
+        <h2>🏭 Construire le processus</h2>
+
+        <div style="display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap">
+          <button id="addStepBtn" class="btn btn-primary">+ Ajouter Étape</button>
+          <button id="clearStepsBtn" class="btn">Effacer toutes les étapes</button>
+          <button id="analyzeBtn" class="btn btn-success">📊 Analyser le Processus VSM</button>
+        </div>
+
+        <div id="processInfo" class="hidden info-box">
+          <strong>✅ Processus chargé:</strong> <span id="processName">Processus dynamique</span>
+        </div>
+
+        <table class="steps-table" id="stepsTable">
+          <thead>
+            <tr>
+              <th>Nom</th><th>Cycle (h)</th><th>Coût ($)</th><th>VA</th><th>Dépendances (séparées par ,)</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="stepsBody">
+            <tr><td colspan="6" style="text-align:center;padding:20px;color:#999">Ajoutez des étapes pour commencer</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <!-- Right: Chatbot -->
+      <div class="card">
+        <h2>🤖 Assistant VSM Intelligent</h2>
+        <div class="chatbot-container">
+          <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+              <div class="message-content">
+                👋 Bonjour! Je suis votre assistant VSM. Ajoutez des étapes puis cliquez sur "Analyser".
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-input-container">
+            <input type="text" id="chatInput" class="chat-input" placeholder="Posez votre question..." onkeypress="handleChatKey(event)">
+            <button class="btn btn-success" id="sendChat">📤 Envoyer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="card hidden" id="resultsSection">
+      <h2>📈 Analyse & Résultats</h2>
+      <div class="kpi-grid">
+        <div class="kpi-card"><h3 id="leadTime">-</h3><p>Lead Time (h)</p></div>
+        <div class="kpi-card"><h3 id="vaRatio">-</h3><p>VA Ratio (%)</p></div>
+        <div class="kpi-card"><h3 id="totalWait">-</h3><p>Temps Attente (h)</p></div>
+        <div class="kpi-card"><h3 id="totalCost">-</h3><p>Coût Total ($)</p></div>
+      </div>
+
+      <div id="chartContainer" style="height:420px;margin-top:10px">
+        <canvas id="vsmChart"></canvas>
+      </div>
+
+      <div class="recommendations" id="recommendations">
+        <h3>🎯 Rapport & Recommandations</h3>
+        <pre id="aiReport" style="white-space:pre-wrap"></pre>
+        <ul id="recommendationsList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
